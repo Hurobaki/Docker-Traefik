@@ -1,0 +1,29 @@
+version: '3.3'
+
+networks:
+   proxy: 
+     external: true
+   internal:
+     external: false
+
+services:
+  gitlab:
+    image: gitlab/gitlab-ce
+    container_name: gitlab
+    environment:
+        - GITLAB_HTTPS=true
+        - .env 
+    volumes:
+        - /srv/gitlab/config:/etc/gitlab
+        - /srv/gitlab/logs:/var/log/gitlab
+        - /srv/gitlab/data:/var/opt/gitlab
+    restart: always
+    labels:
+        - traefik.backend=gitlab
+        - traefik.frontend.rule=Host:git.domain.com
+        - traefik.docker.network=proxy
+        - traefik.port=80
+        - traefik.frontend.entryPoints=http,https
+    networks:
+        - internal
+        - proxy
