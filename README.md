@@ -28,7 +28,7 @@ In the same file set your email for Let's Encrypt configuration and domains you 
 Create a docker network for the proxy to share with containers
 
 ```bash
-$ docker network create <span style="color:red"> proxy </span>
+$ docker network create proxy
 ```
 
 Check that network was created
@@ -39,6 +39,17 @@ $ docker network ls
 
 We will add others containers to this network to be proxied
 
+Create an empty file named *acme.json*
+
+```bash
+$ touch acme.json
+```
+And fix the permission to this file so only root user can read and write this file. 
+
+```bash
+$ chmod 600 acme.json
+```
+
 Then you can run "startProxy.sh" script
 
 ```bash
@@ -46,7 +57,7 @@ $ ./startProxy.sh
 ```
 You will be prompted to fill a domain name. This domain will be used to access your Traefik dashboard from your browser 
 
-It's done your Traefik reverse-proxy is working 
+It's done your Traefik reverse-proxy is working. You can add docker containers to Traefik 
 
 ## Warnings
 
