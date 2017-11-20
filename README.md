@@ -61,7 +61,12 @@ It's done your Traefik reverse-proxy is working. You can add docker containers t
 
 ## Warnings
 
-To be able to use labels in docker-compose.yml file you need to get the 1.16.1 docker-compose version
+To be able to use labels in docker-compose.yml file you need to get the 1.16.1 docker-compose version (https://stackoverflow.com/questions/47094460/docker-compose-having-problems-with-labels)
+
+## Tutorials
+
+* **DigitalOcean** - *How to Use Traefik as a Reverse Proxy for Docker Containers on Ubuntu 16.04* - [Tutorial](https://www.digitalocean.com/community/tutorials/how-to-use-traefik-as-a-reverse-proxy-for-docker-containers-on-ubuntu-16-04)
+* **bardina.net** - *Utilisation de Traefik pour Portainer et Gitlab* - [Tutorial](https://www.bardina.net/traefik-gitlab-docker/)
 
 ## Authors
 
