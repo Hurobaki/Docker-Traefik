@@ -4,7 +4,7 @@ defaultEntryPoints = ["http", "https"]
 [web]
 address = ":8080"
   [web.auth.basic]
-    users = ["admin:$apr1$TF1rGQz9$OdtHJ15PT6LGWObE4tXuK0"]
+    users = ["admin:your_secret_pass"]
 
 # entryPoints section configures the addresses that Traefik and the proxied containers can listen on
 [entryPoints]
