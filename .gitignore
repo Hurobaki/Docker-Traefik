@@ -5,3 +5,4 @@
 !README.md
 !traefik.toml
 !startProxy.sh
+!docker-compose.yml
