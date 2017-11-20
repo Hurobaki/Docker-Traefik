@@ -1,0 +1,30 @@
+defaultEntryPoints = ["http", "https"]
+
+# Web section is for the dashboard interface
+[web]
+address = ":8080"
+  [web.auth.basic]
+    users = ["admin:$apr1$TF1rGQz9$OdtHJ15PT6LGWObE4tXuK0"]
+
+# entryPoints section configures the addresses that Traefik and the proxied containers can listen on
+[entryPoints]
+  [entryPoints.http]
+  address = ":80"
+    [entryPoints.http.redirect] 
+	  entryPoint = "https"
+  [entryPoints.https]
+  address = ":443"
+    [entryPoints.https.tls]
+
+# Acme section is for Let's Encrypt configuration
+[acme]
+# Set your email for Let's Encrypt certificates
+email = "email@domain.com"
+storage = "acme.json"
+entryPoint = "https"
+onHostRule = true
+onDemand = false
+
+# Domains to be secure
+[[acme.domains]]
+main = "domain.com"
