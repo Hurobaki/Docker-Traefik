@@ -1,6 +1,6 @@
 # My Docker Traefik configure
 
-Just to keep my Docker reverse-proxy configuration configuration
+Just to keep my Docker reverse-proxy configuration 
 
 ## Getting starting
 
