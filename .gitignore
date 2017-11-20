@@ -4,3 +4,4 @@
 !.gitignore
 !README.md
 !traefik.toml
+!startProxy.sh
