@@ -23,4 +23,5 @@ docker run -d \
   -l traefik.port=8080 \
   --network proxy \
   --name traefik \
+  --restart always \
   traefik:latest --docker --logLevel=DEBUG
